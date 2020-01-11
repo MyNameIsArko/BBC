@@ -109,7 +109,7 @@ class BBCBox(BoxLayout):
             box.add_widget(lab)
             box.add_widget(self.icon)
             self.add_widget(box)
-        self.add_widget(Button(text='Wyjdź', on_press=self.quit_app, size_hint_y=None, height=100))
+        self.add_widget(Button(text='Exit', on_press=self.quit_app, size_hint_y=None, height=100))
 
     def touch(self, *args):
         if args[0].collide_point(args[1].x, args[1].y):
