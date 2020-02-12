@@ -1,0 +1,58 @@
+<ErrorPopup>:
+    title: 'Błąd!'
+    title_align: 'center'
+    id: main_popup
+    size_hint: [None, None]
+    width: 800
+    height: 400
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Nie można połączyć się z siecią!'
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: 100
+                spacing: 10
+                Button:
+                    text: 'Wyjdź'
+                    on_press: main_popup.exit_app()
+                Button:
+                    text: 'Spróbuj ponownie'
+                    on_press: main_popup.retry()
+
+<AutoLabel>:
+    size_hint_y: None
+    height: self.texture_size[1]
+    text_size: self.size
+    halign: 'center'
+    theme_text_color: "Custom"
+    text_color: 1, 1, 1, 1
+<BBCBox>:
+    orientation: 'vertical'
+    padding: 100
+    spacing: 50
+    canvas.before:
+        Color:
+            rgba: app.theme_cls.bg_dark
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<AutoBox>:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 1,1,1,1
+        Line:
+            width: 2
+            rectangle: self.x, self.y, self.width, self.height
+    size_hint_y: None
+    height: 450
+    padding: 20
+<ExitButton>:
+    text:'Exit'
+    size_hint_y: None
+    height: 150
+    increment_width: 800
+    pos_hint:{'center_x':0.5}
